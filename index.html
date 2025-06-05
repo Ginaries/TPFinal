@@ -240,6 +240,9 @@
   margin-bottom: 1rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px var(--sombra);
+  transform: rotate(-1deg) scale(1.07);
+  filter: brightness(1.1) saturate(1.2);
+  animation: pulse 0.6s infinite alternate;
 }
 
   </style>
@@ -264,14 +267,12 @@
 
 <body>
   <nav class="tabs">
-  <button class="tab-btn active" onclick="openTab('idea')">Idea del Proyecto</button>
+  <button class="tab-btn active" onclick="openTab('idea')">Proyecto</button>
   <button class="tab-btn" onclick="openTab('foda')">FODA</button>
   <button class="tab-btn" onclick="openTab('fechas')">Fechas</button>
 </nav>
   <header>
-    <center><img src=img3.png alt="Expo Juegos" class="banner-img"></center>
-    <h1>GameFest 2025</h1>
-    <p>Una semana de juegos, arte, charlas y creación en UNPAZ</p>
+    <center><img src=img5.png alt="Expo Juegos" class="banner-img"></center>
   </header>
 <!-- ESTA SECCION ES DE PRUEBA Y ESTA SOLO PARA VER SI FUNCIONAN LAS TABS -->
   <section>
@@ -280,7 +281,6 @@
       <p><strong>GameFest</strong> es un evento universitario 100% independiente que celebra la creación, prueba y desarrollo de juegos. Durante cinco días, se abre al público general con actividades como clases abiertas, charlas, demostraciones, pitchs, zapadas lúdicas, game jams, pruebas de juegos de mesa y mucho más.</p>
       <p>La propuesta apunta a visibilizar el potencial de la carrera de desarrollo de videojuegos y juegos de mesa en la UNPAZ, con el objetivo de atraer a nuevas personas interesadas en sumarse a equipos de producción y vivir la experiencia del diseño lúdico de forma activa.</p>
   </section>
-
 <section id="foda" class="tab-content">
   <center><h2>Análisis FODA</h2></center>
   <ul>
