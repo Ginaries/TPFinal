@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>No seas basura / No tires basura</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #2f7d32;
+      --verde-claro: #46a049;
+      --gris-fondo: #f4f4f4;
+      --blanco: #ffffff;
+      --sombra: rgba(0, 0, 0, 0.1);
+      --fiesta: linear-gradient(45deg, #4caf50, #8bc34a, #ffeb3b, #ff9800, #f44336);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--gris-fondo);
+      color: #333;
+      scroll-behavior: smooth;
+      background-image: radial-gradient(circle at 20% 20%, #e8f5e9 0%, transparent 50%), radial-gradient(circle at 80% 80%, #c8e6c9 0%, transparent 50%);
+      animation: backgroundMove 30s linear infinite;
+    }
+
+    @keyframes backgroundMove {
+      0% { background-position: 0 0, 100% 100%; }
+      100% { background-position: 100% 0, 0 100%; }
+    }
+
+    header {
+      background: var(--fiesta);
+      background-size: 400% 400%;
+      color: white;
+      padding: 5rem 2rem;
+      text-align: center;
+      animation: fiestaColor 10s infinite;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @keyframes fiestaColor {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      background: radial-gradient(circle, #ffeb3b 0%, transparent 70%);
+      border-radius: 50%;
+      animation: explosion 1s infinite ease-in-out alternate;
+    }
+
+    @keyframes explosion {
+      0% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(-50%) scale(10);
+        opacity: 0;
+      }
+    }
+
+    header h1 {
+      font-size: 3.2rem;
+      margin: 0;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      background-color: var(--blanco);
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px var(--sombra);
+      position: relative;
+    }
+
+    section:hover {
+      background-color: #e8f5e9;
+      transform: scale(1.01);
+    }
+
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 5px;
+      background: linear-gradient(to right, #66bb6a, #ffeb3b, #f44336);
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: var(--verde);
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 12px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+      box-shadow: 0 4px 10px var(--sombra);
+    }
+
+    .gallery img:hover {
+      transform: rotate(-1deg) scale(1.07);
+      filter: brightness(1.1) saturate(1.2);
+      animation: pulse 0.6s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { transform: scale(1.05); }
+      to { transform: scale(1.1); }
+    }
+
+    footer {
+      background-color: var(--verde);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-weight: bold;
+    }
+
+    .btn {
+      background: linear-gradient(90deg, #66bb6a, #43a047);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: transform 0.2s ease;
+      box-shadow: 0 4px 8px var(--sombra);
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      background: linear-gradient(90deg, #81c784, #388e3c);
+      animation: btnFlash 0.3s alternate infinite;
+    }
+
+    @keyframes btnFlash {
+      from { box-shadow: 0 0 15px #fbc02d; }
+      to { box-shadow: 0 0 25px #ff5722; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>No seas basura / No tires basura</h1>
+    <p>Reciclaje inteligente con beneficios reales</p>
+  </header>
+
+  <section>
+    <center><h2>Integrantes</h2></center>
+    <p>Alejandro Banegas 
+    <p>León </p>
+    <p>Luciana Andrea Perez</p>
+  </section>
+
+  <section>
+    <center><h2>Resumen</h2></center>
+    <p>“No seas basura / No tires basura” es una iniciativa ecológica impulsada por Carrefour que transforma el reciclaje en una acción recompensada. Usando tecnología de pesaje avanzada y gamificación, las estaciones de reciclaje entregan cupones de descuento según el peso depositado, con posibilidad de integración a la app Mi Carrefour.</p>
+  </section>
+
+  <section>
+    <center><h2>Justificación</h2></center>
+    <p>En un contexto donde la conciencia ambiental es urgente, proponemos una solución que involucre activamente a la comunidad a través de un sistema fácil, accesible y beneficioso para todos. La acción directa con recompensa inmediata genera impacto real y mensurable.</p>
+  </section>
+
+  <section>
+    <center><h2>Objetivos</h2></center>
+    <ul>
+      <li>Reducir residuos urbanos mediante reciclaje efectivo.</li>
+      <li>Fidelizar a clientes a través de beneficios ecológicos.</li>
+      <li>Reforzar el posicionamiento de Carrefour como marca sostenible.</li>
+    </ul>
+  </section>
+
+  <section>
+    <Center><h2>Beneficios</h2></center>
+    <ul>
+      <li>Clientes: descuentos, recompensas y participación.</li>
+      <li>Carrefour: imagen positiva, atracción de nuevos clientes.</li>
+      <li>Medio ambiente: reducción de basura reciclable en la vía pública.</li>
+    </ul>
+  </section>
+
+  <section>
+    <center><h2>Habilidades desarrolladas</h2></center>
+    <ul>
+      <li>Gamificación aplicada a problemas reales.</li>
+      <li>Diseño de experiencias centradas en el usuario.</li>
+      <li>Pensamiento ecológico, trabajo en equipo, comunicación social.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Galería de fotos</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/300x200?text=Estaci%C3%B3n+de+Reciclaje" alt="Estación de reciclaje">
+      <img src="https://via.placeholder.com/300x200?text=Pantalla+Gamificada" alt="Pantalla gamificada">
+      <img src="https://via.placeholder.com/300x200?text=Usuario+Reciclando" alt="Usuario reciclando">
+    </div>
+  </section>
+
+  <section>
+    <h2>Encuesta de satisfacción</h2>
+    <p>Ayudanos a mejorar completando la siguiente encuesta:</p>
+    <a class="btn" href="https://forms.gle/ejemplo" target="_blank">Ir a la encuesta</a>
+  </section>
+
+  <footer>
+    <p>© 2025 - Producción Alejandro Banegas</p>
+  </footer>
+</body>
+</html>
