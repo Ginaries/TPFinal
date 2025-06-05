@@ -75,25 +75,57 @@
 
     <section id="diagrama" class="tab-content">
       <h2 class="text-2xl mb-6 text-purple-400">Diagramas del Proyecto</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="diagram-box">
-          <h3 class="text-lg text-pink-400 mb-2"><i class="fas fa-chart-pie"></i> Análisis FODA</h3>
-          <ul class="text-sm list-disc pl-5 space-y-1">
-            <li><strong>Fortalezas:</strong> Organización estudiantil, variedad de actividades, gratuidad.</li>
-            <li><strong>Oportunidades:</strong> Difusión de la carrera, nuevos públicos, alianzas institucionales.</li>
-            <li><strong>Debilidades:</strong> Recursos escasos, experiencia logística limitada.</li>
-            <li><strong>Amenazas:</strong> Baja participación, eventos superpuestos.</li>
+    
+      <!-- Diagrama FODA -->
+      <div class="grid grid-cols-2 gap-4 mb-8">
+        <div class="bg-green-500 text-white p-4 rounded-lg shadow-lg">
+          <h3 class="text-lg font-bold mb-2">Fortalezas</h3>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Organización estudiantil</li>
+            <li>Variedad de actividades</li>
+            <li>Gratuidad</li>
           </ul>
         </div>
-
-        <div class="diagram-box">
-          <h3 class="text-lg text-blue-400 mb-2"><i class="fas fa-fish"></i> Diagrama Espina de Pescado</h3>
-          <ul class="text-sm list-disc pl-5 space-y-1">
-            <li><strong>Materiales:</strong> Equipos limitados, insumos prestados.</li>
-            <li><strong>Métodos:</strong> Coordinación por líderes estudiantiles.</li>
-            <li><strong>Gente:</strong> Participación voluntaria, estudiantes avanzados como guías.</li>
-            <li><strong>Entorno:</strong> Espacios universitarios, clima colaborativo.</li>
+        <div class="bg-blue-500 text-white p-4 rounded-lg shadow-lg">
+          <h3 class="text-lg font-bold mb-2">Oportunidades</h3>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Difusión de la carrera</li>
+            <li>Nuevos públicos</li>
+            <li>Alianzas institucionales</li>
           </ul>
+        </div>
+        <div class="bg-red-500 text-white p-4 rounded-lg shadow-lg">
+          <h3 class="text-lg font-bold mb-2">Debilidades</h3>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Recursos escasos</li>
+            <li>Experiencia logística limitada</li>
+          </ul>
+        </div>
+        <div class="bg-yellow-500 text-white p-4 rounded-lg shadow-lg">
+          <h3 class="text-lg font-bold mb-2">Amenazas</h3>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Baja participación</li>
+            <li>Eventos superpuestos</li>
+          </ul>
+        </div>
+      </div>
+    
+      <!-- Diagrama Espina de Pescado -->
+      <div class="relative bg-gray-900 text-white p-6 rounded-lg shadow-lg">
+        <h3 class="text-lg font-bold mb-4 text-center">Diagrama Espina de Pescado</h3>
+        <div class="flex items-center justify-center">
+          <div class="flex flex-col items-end space-y-4">
+            <div class="bg-purple-500 px-4 py-2 rounded-lg shadow-md">Materiales</div>
+            <div class="bg-purple-500 px-4 py-2 rounded-lg shadow-md">Métodos</div>
+          </div>
+          <div class="w-1 h-40 bg-white mx-4"></div>
+          <div class="flex flex-col items-start space-y-4">
+            <div class="bg-purple-500 px-4 py-2 rounded-lg shadow-md">Gente</div>
+            <div class="bg-purple-500 px-4 py-2 rounded-lg shadow-md">Entorno</div>
+          </div>
+        </div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+          <div class="bg-pink-500 px-6 py-3 rounded-lg shadow-md">Problema Central</div>
         </div>
       </div>
     </section>
@@ -141,12 +173,12 @@
     function openTab(tabId) {
       const tabs = document.querySelectorAll('.tab-btn');
       const contents = document.querySelectorAll('.tab-content');
-
+  
       tabs.forEach(btn => btn.classList.remove('active'));
       contents.forEach(tab => tab.classList.remove('active'));
-
+  
       document.getElementById(tabId).classList.add('active');
-      event.target.classList.add('active');
+      document.querySelector(`[onclick="openTab('${tabId}')"]`).classList.add('active');
     }
   </script>
 </body>
