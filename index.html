@@ -231,6 +231,16 @@
 .tab-content.active {
   display: block;
 }
+.banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 300px; /* Podés ajustar o eliminar esta línea si querés que sea más alta */
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--sombra);
+}
 
   </style>
 </head>
@@ -259,17 +269,17 @@
   <button class="tab-btn" onclick="openTab('fechas')">Fechas</button>
 </nav>
   <header>
+    <center><img src=img3.png alt="Expo Juegos" class="banner-img"></center>
     <h1>GameFest 2025</h1>
     <p>Una semana de juegos, arte, charlas y creación en UNPAZ</p>
   </header>
 <!-- ESTA SECCION ES DE PRUEBA Y ESTA SOLO PARA VER SI FUNCIONAN LAS TABS -->
   <section>
     <section id="idea" class="tab-content active">
-  <center><h2>Idea del Proyecto</h2></center>
-  <p>GameFest es un evento 100% independiente universitario que reúne durante 5 días actividades lúdicas como zapadas de juegos, charlas, clases abiertas, desarrollo de videojuegos y juegos de mesa, arte interactivo y mucho más. Tiene como objetivo mostrar todo el potencial de la carrera y atraer a nuevas personas interesadas en participar del mundo del desarrollo de juegos desde todas sus áreas: diseño, programación, arte, narrativa, producción y testing.</p>
-
-  <p>Esta edición incluye una zapada lúdica y una game jam en simultáneo, invitando no solo a estudiantes avanzados, sino también a personas externas interesadas en el desarrollo, para que formen parte de los equipos creativos. Queremos lograr que GameFest sea un espacio abierto, comunitario, creativo y colaborativo que represente todo lo que la industria del juego puede ofrecer.</p>
-</section>
+      <center><h2>¿Qué es GameFest?</h2></center>
+      <p><strong>GameFest</strong> es un evento universitario 100% independiente que celebra la creación, prueba y desarrollo de juegos. Durante cinco días, se abre al público general con actividades como clases abiertas, charlas, demostraciones, pitchs, zapadas lúdicas, game jams, pruebas de juegos de mesa y mucho más.</p>
+      <p>La propuesta apunta a visibilizar el potencial de la carrera de desarrollo de videojuegos y juegos de mesa en la UNPAZ, con el objetivo de atraer a nuevas personas interesadas en sumarse a equipos de producción y vivir la experiencia del diseño lúdico de forma activa.</p>
+  </section>
 
 <section id="foda" class="tab-content">
   <center><h2>Análisis FODA</h2></center>
@@ -315,59 +325,13 @@
   </table>
 </section>
     <!-- ACA TERMINA LA SECCION DE PRUEBA Y ESTA SOLO PARA VER SI FUNCIONAN LAS TABS -->
-
-    <center><h2>¿Qué es GameFest?</h2></center>
-    <p><strong>GameFest</strong> es un evento universitario 100% independiente que celebra la creación, prueba y desarrollo de juegos. Durante cinco días, se abre al público general con actividades como clases abiertas, charlas, demostraciones, pitchs, zapadas lúdicas, game jams, pruebas de juegos de mesa y mucho más.</p>
-    <p>La propuesta apunta a visibilizar el potencial de la carrera de desarrollo de videojuegos y juegos de mesa en la UNPAZ, con el objetivo de atraer a nuevas personas interesadas en sumarse a equipos de producción y vivir la experiencia del diseño lúdico de forma activa.</p>
-  </section>
-
-  <section>
-    <center><h2>Integrantes</h2></center>
-    <p>Alejandro Banegas</p>
-    <p>León</p>
-    <p>Luciana Andrea Pérez</p>
-  </section>
-
-  <section>
-    <center><h2>Fechas importantes</h2></center>
-    <center><table>
-      <tr><th>Actividad</th><th>Fecha</th></tr>
-      <tr><td>Lanzamiento oficial</td><td>5 de agosto de 2025</td></tr>
-      <tr><td>Inicio del evento y Presentaciónes</td><td>1 de septiembre de 2025</td></tr>
-      <tr><td>Zapada Lúdica</td><td>2 de septiembre de 2025</td></tr>
-      <tr><td>Game Jam</td><td>2 de septiembre de 2025</td></tr>
-      <tr><td>Cierre y exposición de juegos</td><td>5 de septiembre de 2025</td></tr>
-    </table></center>
-  </section>
-
-  <section>
-    <center><h2>Análisis FODA</h2></center>
-    <table>
-      <tr>
-        <th>Fortalezas</th>
-        <th>Oportunidades</th>
-      </tr>
-      <tr>
-        <td>- Enfoque participativo y abierto al público<br>- Diversidad de actividades<br>- Producción 100% estudiantil</td>
-        <td>- Posibilidad de sumar nuevos estudiantes<br>- Promover alianzas institucionales<br>- Difusión de la carrera</td>
-      </tr>
-      <tr>
-        <th>Debilidades</th>
-        <th>Amenazas</th>
-      </tr>
-      <tr>
-        <td>- Recursos limitados<br>- Falta de experiencia en logística masiva</td>
-        <td>- Baja asistencia por falta de difusión<br>- Competencia con otros eventos externos</td>
-      </tr>
-    </table>
-  </section>
-
   <section>
     <center><h2>Galería de fotos</h2></center>
     <div class="gallery">
-      <img src="https://drive.google.com/file/d/1sD-Z8U12HyfilgIsN38rW6m9j_XZQU3c/view?usp=sharing" alt="Game Jam 2024">
-      <img src="https://via.placeholder.com/300x200?text=Zapada+Lúdica" alt="Zapada Lúdica">
-      <img src="https://via.placeholder.com/300x200?text=Expo+Juegos" alt="Expo Juegos">
+      <img src=img2.png alt="Game Jam 2024">
+      <img src=img1.png alt="Zapada Lúdica">
+      <img src=img3.png alt="Expo Juegos">
+      <img src=img4.png alt="Expo Juegos">
     </div>
   </section>
 
