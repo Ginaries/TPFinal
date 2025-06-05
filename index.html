@@ -194,8 +194,64 @@
     th {
       background-color: #e8f5e9;
     }
+    .tabs {
+  display: flex;
+  justify-content: center;
+  background: var(--verde-claro);
+  padding: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tab-btn {
+  background-color: var(--blanco);
+  color: var(--verde);
+  border: 2px solid var(--verde);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.tab-btn:hover {
+  background-color: #e8f5e9;
+  transform: scale(1.05);
+}
+
+.tab-btn.active {
+  background-color: var(--verde);
+  color: white;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
   </style>
 </head>
+<script>
+  function openTab(tabId) {
+    // Ocultar todas las secciones
+    const contents = document.querySelectorAll('.tab-content');
+    contents.forEach(content => content.classList.remove('active'));
+
+    // Remover clase activa de todos los botones
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // Mostrar sección activa
+    document.getElementById(tabId).classList.add('active');
+
+    // Activar botón actual
+    event.target.classList.add('active');
+  }
+</script>
+
 <body>
   <nav class="tabs">
   <button class="tab-btn active" onclick="openTab('idea')">Idea del Proyecto</button>
@@ -309,7 +365,7 @@
   <section>
     <center><h2>Galería de fotos</h2></center>
     <div class="gallery">
-      <img src="https://via.placeholder.com/300x200?text=Game+Jam+2024" alt="Game Jam 2024">
+      <img src="https://drive.google.com/file/d/1sD-Z8U12HyfilgIsN38rW6m9j_XZQU3c/view?usp=sharing" alt="Game Jam 2024">
       <img src="https://via.placeholder.com/300x200?text=Zapada+Lúdica" alt="Zapada Lúdica">
       <img src="https://via.placeholder.com/300x200?text=Expo+Juegos" alt="Expo Juegos">
     </div>
