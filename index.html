@@ -2,348 +2,152 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GameFest 2025</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameFest 2025 UNPAZ</title>
+
+  <!-- Fuentes e íconos -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
-    :root {
-      --verde: #2f7d32;
-      --verde-claro: #46a049;
-      --gris-fondo: #f4f4f4;
-      --blanco: #ffffff;
-      --sombra: rgba(0, 0, 0, 0.1);
-      --fiesta: linear-gradient(45deg, #4caf50, #8bc34a, #ffeb3b, #ff9800, #f44336);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: var(--gris-fondo);
-      color: #333;
-      scroll-behavior: smooth;
-      background-image: radial-gradient(circle at 20% 20%, #e8f5e9 0%, transparent 50%), radial-gradient(circle at 80% 80%, #c8e6c9 0%, transparent 50%);
-      animation: backgroundMove 30s linear infinite;
-    }
-
-    @keyframes backgroundMove {
-      0% { background-position: 0 0, 100% 100%; }
-      100% { background-position: 100% 0, 0 100%; }
-    }
-
-    header {
-      background: var(--fiesta);
-      background-size: 400% 400%;
+      font-family: 'Press Start 2P', cursive;
+      background: url('https://cdn.pixabay.com/photo/2017/07/08/09/03/pixel-2483635_1280.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: white;
-      padding: 5rem 2rem;
-      text-align: center;
-      animation: fiestaColor 10s infinite;
-      position: relative;
-      overflow: hidden;
     }
 
-    @keyframes fiestaColor {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    .tab-btn {
+      @apply bg-gray-800 text-white border border-pink-500 px-4 py-2 m-1 rounded-lg hover:bg-pink-500 transition transform hover:scale-105 hover:shadow-lg;
     }
-
-    header::after {
-      content: "";
-      position: absolute;
-      top: -50px;
-      left: 50%;
-      width: 20px;
-      height: 20px;
-      background: radial-gradient(circle, #ffeb3b 0%, transparent 70%);
-      border-radius: 50%;
-      animation: explosion 1s infinite ease-in-out alternate;
+    .tab-btn.active {
+      @apply bg-pink-600;
     }
-
-    @keyframes explosion {
-      0% {
-        transform: translateX(-50%) scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: translateX(-50%) scale(10);
-        opacity: 0;
-      }
+    .tab-content {
+    display: none;
+    color: black; /* Cambiar el color del texto */
+    background-color: white; /* Fondo blanco */
+    padding: 1rem;
+    border-radius: 0.5rem;
     }
-
-    header h1 {
-      font-size: 3.2rem;
-      margin: 0;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    .tab-content.active {
+    display: block;
     }
-
-    section {
-      padding: 3rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      background-color: var(--blanco);
-      margin-bottom: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px var(--sombra);
-      position: relative;
+    .neon-title {
+      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
     }
-
-    section:hover {
-      background-color: #e8f5e9;
-      transform: scale(1.01);
+    .diagram-box {
+      @apply p-4 bg-gray-900 border-2 border-purple-500 rounded-lg shadow-lg;
     }
-
-    section::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; height: 5px;
-      background: linear-gradient(to right, #66bb6a, #ffeb3b, #f44336);
-      border-top-left-radius: 12px;
-      border-top-right-radius: 12px;
+    .pixel-shadow {
+      box-shadow: 0 0 10px #f0f, 0 0 20px #0ff;
     }
-
-    section h2 {
-      font-size: 2rem;
-      color: var(--verde);
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .gallery img {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 12px;
-      transition: transform 0.3s ease, filter 0.3s ease;
-      box-shadow: 0 4px 10px var(--sombra);
-    }
-
-    .gallery img:hover {
-      transform: rotate(-1deg) scale(1.07);
-      filter: brightness(1.1) saturate(1.2);
-      animation: pulse 0.6s infinite alternate;
-    }
-
-    @keyframes pulse {
-      from { transform: scale(1.05); }
-      to { transform: scale(1.1); }
-    }
-
-    footer {
-      background-color: var(--verde);
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-      font-weight: bold;
-    }
-
-    .btn {
-      background: linear-gradient(90deg, #66bb6a, #43a047);
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 1rem;
-      transition: transform 0.2s ease;
-      box-shadow: 0 4px 8px var(--sombra);
-    }
-
-    .btn:hover {
-      transform: scale(1.08);
-      background: linear-gradient(90deg, #81c784, #388e3c);
-      animation: btnFlash 0.3s alternate infinite;
-    }
-
-    @keyframes btnFlash {
-      from { box-shadow: 0 0 15px #fbc02d; }
-      to { box-shadow: 0 0 25px #ff5722; }
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
-
-    table, th, td {
-      border: 1px solid #ccc;
-    }
-
-    th, td {
-      padding: 0.75rem;
-      text-align: center;
-    }
-
-    th {
-      background-color: #e8f5e9;
-    }
-    .tabs {
-  display: flex;
-  justify-content: center;
-  background: var(--verde-claro);
-  padding: 1rem;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.tab-btn {
-  background-color: var(--blanco);
-  color: var(--verde);
-  border: 2px solid var(--verde);
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.tab-btn:hover {
-  background-color: #e8f5e9;
-  transform: scale(1.05);
-}
-
-.tab-btn.active {
-  background-color: var(--verde);
-  color: white;
-}
-
-.tab-content {
-  display: none;
-}
-
-.tab-content.active {
-  display: block;
-}
-.banner-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  max-height: 300px; /* Podés ajustar o eliminar esta línea si querés que sea más alta */
-  object-fit: cover;
-  margin-bottom: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px var(--sombra);
-  transform: rotate(-1deg) scale(1.07);
-  filter: brightness(1.1) saturate(1.2);
-  animation: pulse 0.6s infinite alternate;
-}
-
   </style>
 </head>
-<script>
-  function openTab(tabId) {
-    // Ocultar todas las secciones
-    const contents = document.querySelectorAll('.tab-content');
-    contents.forEach(content => content.classList.remove('active'));
+<body class="min-h-screen">
 
-    // Remover clase activa de todos los botones
-    const buttons = document.querySelectorAll('.tab-btn');
-    buttons.forEach(btn => btn.classList.remove('active'));
-
-    // Mostrar sección activa
-    document.getElementById(tabId).classList.add('active');
-
-    // Activar botón actual
-    event.target.classList.add('active');
-  }
-</script>
-
-<body>
-  <nav class="tabs">
-  <button class="tab-btn active" onclick="openTab('idea')">Proyecto</button>
-  <button class="tab-btn" onclick="openTab('foda')">FODA</button>
-  <button class="tab-btn" onclick="openTab('fechas')">Fechas</button>
-</nav>
-  <header>
-    <center><img src=img5.png alt="Expo Juegos" class="banner-img"></center>
+  <!-- Banner -->
+  <header class="text-center py-8 bg-black bg-opacity-70">
+    <img src="img5.png" alt="Banner GameFest" class="mx-auto max-h-60 rounded-lg shadow-lg">
+    <h1 class="text-3xl text-pink-400 mt-4 neon-title">GameFest 2025 UNPAZ</h1>
+    <p class="text-sm text-blue-300 mt-2">Una semana de juegos, creación y comunidad universitaria</p>
   </header>
-<!-- ESTA SECCION ES DE PRUEBA Y ESTA SOLO PARA VER SI FUNCIONAN LAS TABS -->
-  <section>
-    <section id="idea" class="tab-content active">
-      <center><h2>¿Qué es GameFest?</h2></center>
-      <p><strong>GameFest</strong> es un evento universitario 100% independiente que celebra la creación, prueba y desarrollo de juegos. Durante cinco días, se abre al público general con actividades como clases abiertas, charlas, demostraciones, pitchs, zapadas lúdicas, game jams, pruebas de juegos de mesa y mucho más.</p>
-      <p>La propuesta apunta a visibilizar el potencial de la carrera de desarrollo de videojuegos y juegos de mesa en la UNPAZ, con el objetivo de atraer a nuevas personas interesadas en sumarse a equipos de producción y vivir la experiencia del diseño lúdico de forma activa.</p>
-  </section>
-<section id="foda" class="tab-content">
-  <center><h2>Análisis FODA</h2></center>
-  <ul>
-    <li><strong>Fortalezas:</strong> Evento gratuito, organizado por la universidad, con alto contenido educativo y práctico.</li>
-    <li><strong>Oportunidades:</strong> Vincular a estudiantes con la industria, captar nuevos talentos, visibilizar la carrera.</li>
-    <li><strong>Debilidades:</strong> Recursos limitados, depende de la autogestión estudiantil, logística desafiante.</li>
-    <li><strong>Amenazas:</strong> Baja participación por falta de difusión externa, superposición con otros eventos académicos.</li>
-  </ul>
-</section>
 
-<section id="fechas" class="tab-content">
-  <center><h2>Cronograma Tentativo</h2></center>
-  <table style="width:100%; border-collapse: collapse;">
-    <thead style="background-color: #c8e6c9;">
-      <tr>
-        <th style="padding: 10px; border: 1px solid #ccc;">Día</th>
-        <th style="padding: 10px; border: 1px solid #ccc;">Actividad</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="padding: 10px; border: 1px solid #ccc;">Lunes</td>
-        <td style="padding: 10px; border: 1px solid #ccc;">Inauguración, charlas, muestra de prototipos.</td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; border: 1px solid #ccc;">Martes</td>
-        <td style="padding: 10px; border: 1px solid #ccc;">Clases abiertas + zapada lúdica.</td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; border: 1px solid #ccc;">Miércoles</td>
-        <td style="padding: 10px; border: 1px solid #ccc;">Game jam (día 1), charlas de producción.</td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; border: 1px solid #ccc;">Jueves</td>
-        <td style="padding: 10px; border: 1px solid #ccc;">Game jam (día 2), pruebas abiertas al público.</td>
-      </tr>
-      <tr>
-        <td style="padding: 10px; border: 1px solid #ccc;">Viernes</td>
-        <td style="padding: 10px; border: 1px solid #ccc;">Cierre, premiación, exposición final.</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-    <!-- ACA TERMINA LA SECCION DE PRUEBA Y ESTA SOLO PARA VER SI FUNCIONAN LAS TABS -->
-  <section>
-    <center><h2>Galería de fotos</h2></center>
-    <div class="gallery">
-      <img src=img2.png alt="Game Jam 2024">
-      <img src=img1.png alt="Zapada Lúdica">
-      <img src=img3.png alt="Expo Juegos">
-      <img src=img4.png alt="Expo Juegos">
-    </div>
-  </section>
+  <!-- Tabs -->
+  <nav class="flex justify-center flex-wrap bg-black bg-opacity-70 py-4">
+    <button class="tab-btn active" onclick="openTab('proyecto')"><i class="fas fa-gamepad"></i> Proyecto</button>
+    <button class="tab-btn" onclick="openTab('diagrama')"><i class="fas fa-diagram-project"></i> Diagrama</button>
+    <button class="tab-btn" onclick="openTab('fechas')"><i class="fas fa-calendar-alt"></i> Fechas</button>
+    <button class="tab-btn" onclick="openTab('galeria')"><i class="fas fa-images"></i> Galería</button>
+    <button class="tab-btn" onclick="openTab('encuesta')"><i class="fas fa-check-circle"></i> Encuesta</button>
+  </nav>
 
-  <section>
-    <h2>Encuesta de satisfacción</h2>
-    <p>Ayudanos a mejorar completando la siguiente encuesta:</p>
-    <a class="btn" href="https://forms.gle/ejemplo" target="_blank">Ir a la encuesta</a>
-  </section>
+  <!-- Contenidos -->
+  <main class="max-w-5xl mx-auto p-4">
+    <section id="proyecto" class="tab-content active">
+      <h2 class="text-2xl mb-4 text-cyan-400">¿Qué es GameFest?</h2>
+      <p class="mb-4">GameFest es un evento universitario independiente de la UNPAZ donde durante cinco días se celebran todas las áreas del desarrollo lúdico. Se realizan actividades abiertas al público como clases, zapadas, game jams, talleres, muestras artísticas y más, buscando integrar a la comunidad dentro del proceso de creación de juegos.</p>
+      <p class="mb-4">No es solo para estudiantes: está pensado para cualquiera que quiera sumarse a un equipo creativo, aprender haciendo, y ver en acción cómo se diseñan experiencias jugables. El evento está guiado por estudiantes avanzados que hacen de líderes de producción durante las actividades.</p>
+    </section>
 
-  <footer>
+    <section id="diagrama" class="tab-content">
+      <h2 class="text-2xl mb-6 text-purple-400">Diagramas del Proyecto</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="diagram-box">
+          <h3 class="text-lg text-pink-400 mb-2"><i class="fas fa-chart-pie"></i> Análisis FODA</h3>
+          <ul class="text-sm list-disc pl-5 space-y-1">
+            <li><strong>Fortalezas:</strong> Organización estudiantil, variedad de actividades, gratuidad.</li>
+            <li><strong>Oportunidades:</strong> Difusión de la carrera, nuevos públicos, alianzas institucionales.</li>
+            <li><strong>Debilidades:</strong> Recursos escasos, experiencia logística limitada.</li>
+            <li><strong>Amenazas:</strong> Baja participación, eventos superpuestos.</li>
+          </ul>
+        </div>
+
+        <div class="diagram-box">
+          <h3 class="text-lg text-blue-400 mb-2"><i class="fas fa-fish"></i> Diagrama Espina de Pescado</h3>
+          <ul class="text-sm list-disc pl-5 space-y-1">
+            <li><strong>Materiales:</strong> Equipos limitados, insumos prestados.</li>
+            <li><strong>Métodos:</strong> Coordinación por líderes estudiantiles.</li>
+            <li><strong>Gente:</strong> Participación voluntaria, estudiantes avanzados como guías.</li>
+            <li><strong>Entorno:</strong> Espacios universitarios, clima colaborativo.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="fechas" class="tab-content">
+      <h2 class="text-2xl mb-4 text-yellow-300">Fechas Clave</h2>
+      <table class="w-full table-auto text-sm text-center">
+        <thead class="bg-gray-800 text-pink-400">
+          <tr><th class="p-2">Día</th><th class="p-2">Actividad</th></tr>
+        </thead>
+        <tbody class="bg-black bg-opacity-40">
+          <tr><td class="p-2">Lunes</td><td class="p-2">Inauguración, charlas, muestra de prototipos</td></tr>
+          <tr><td class="p-2">Martes</td><td class="p-2">Clases abiertas, zapada lúdica</td></tr>
+          <tr><td class="p-2">Miércoles</td><td class="p-2">Game Jam Día 1 + producción</td></tr>
+          <tr><td class="p-2">Jueves</td><td class="p-2">Game Jam Día 2 + pruebas</td></tr>
+          <tr><td class="p-2">Viernes</td><td class="p-2">Exposición final, premios y cierre</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="galeria" class="tab-content">
+      <h2 class="text-2xl mb-4 text-pink-400">Galería de Fotos</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <img src="img1.png" class="rounded-lg pixel-shadow" alt="Foto 1">
+        <img src="img2.png" class="rounded-lg pixel-shadow" alt="Foto 2">
+        <img src="img3.png" class="rounded-lg pixel-shadow" alt="Foto 3">
+        <img src="img4.png" class="rounded-lg pixel-shadow" alt="Foto 4">
+      </div>
+    </section>
+
+    <section id="encuesta" class="tab-content">
+      <h2 class="text-2xl mb-4 text-green-300">Encuesta de Satisfacción</h2>
+      <p class="mb-4">Ayudanos a mejorar completando esta encuesta breve sobre tu experiencia en GameFest 2025.</p>
+      <a class="inline-block bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-lg shadow-md transition" href="https://forms.gle/ejemplo" target="_blank">
+        <i class="fas fa-pen"></i> Ir a la encuesta
+      </a>
+    </section>
+  </main>
+
+  <footer class="text-center py-6 bg-black bg-opacity-80 text-white text-sm">
     <p>© 2025 - Producción Alejandro Banegas</p>
   </footer>
+
+  <script>
+    function openTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-btn');
+      const contents = document.querySelectorAll('.tab-content');
+
+      tabs.forEach(btn => btn.classList.remove('active'));
+      contents.forEach(tab => tab.classList.remove('active'));
+
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
 </body>
 </html>
-
