@@ -21,63 +21,119 @@
     }
 
     .tab-btn {
-      @apply bg-gray-800 text-white border border-pink-500 px-4 py-2 m-1 rounded-lg hover:bg-pink-500 transition transform hover:scale-105 hover:shadow-lg;
+      background-color: #1f2937; /* bg-gray-800 */
+      color: #fff; /* text-white */
+      border: 1px solid #ec4899; /* border-pink-500 */
+      padding: 0.5rem 1rem; /* px-4 py-2 */
+      border-radius: 0.5rem; /* rounded-lg */
+      transition: all 0.3s;
+    }
+    .tab-btn:hover {
+      background-color: #ec4899; /* bg-pink-500 */
+      transform: scale(1.05); /* scale-105 */
+      box-shadow: 0 4px 14px 0 rgba(240, 46, 170, 0.39); /* shadow-lg */
     }
     .tab-btn.active {
-      @apply bg-pink-600;
+      background-color: #db2777; /* bg-pink-600 */
+      box-shadow: inset 0 2px 8px #00000033; /* shadow-inner */
     }
+
     .tab-content {
-    display: none;
-    color: black; /* Cambiar el color del texto */
-    background-color: white; /* Fondo blanco */
-    padding: 1rem;
-    border-radius: 0.5rem;
+      display: none;
+      color: black;
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.5s ease-in-out;
     }
     .tab-content.active {
-    display: block;
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
     }
+
     .neon-title {
       text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
     }
-    .diagram-box {
-      @apply p-4 bg-gray-900 border-2 border-purple-500 rounded-lg shadow-lg;
-    }
+
     .pixel-shadow {
       box-shadow: 0 0 10px #f0f, 0 0 20px #0ff;
     }
+    @keyframes bounce-slow {
+        0%, 100% { transform: translateY(0);}
+        50% { transform: translateY(-18px);}
+      }
+      .animate-bounce-slow {
+        animation: bounce-slow 3s infinite;
+      }
+      @keyframes glow {
+        0%, 100% { text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;}
+        50% { text-shadow: 0 0 30px #f0f, 0 0 60px #0ff;}
+      }
+      .animate-glow {
+        animation: glow 2.5s infinite alternate;
+      }
+      @keyframes fadein {
+        from { opacity: 0; transform: translateY(20px);}
+        to { opacity: 1; transform: translateY(0);}
+      }
+      .animate-fadein {
+        animation: fadein 1.5s ease;
+      }
   </style>
 </head>
 <body class="min-h-screen">
 
-  <!-- Banner -->
-  <header class="text-center py-8 bg-black bg-opacity-70">
-    <img src="img5.png" alt="Banner GameFest" class="mx-auto max-h-60 rounded-lg shadow-lg">
-    <h1 class="text-3xl text-pink-400 mt-4 neon-title">GameFest 2025 UNPAZ</h1>
-    <p class="text-sm text-blue-300 mt-2">Una semana de juegos, creación y comunidad universitaria</p>
+  <!-- Banner con animaciones -->
+  <header class="text-center py-8 bg-black bg-opacity-70 relative overflow-hidden">
+    <!-- Efecto de partículas animadas -->
+    <div id="particles" class="absolute inset-0 pointer-events-none z-0"></div>
+    <img src="img5.png" alt="Banner GameFest" class="mx-auto max-h-60 rounded-lg shadow-lg relative z-10 animate-bounce-slow">
+    <h1 class="text-3xl text-pink-400 mt-4 neon-title relative z-10 animate-glow">GameFest 2025 UNPAZ</h1>
+    <p class="text-sm text-blue-300 mt-2 relative z-10 animate-fadein">Una semana de juegos, creación y comunidad universitaria</p>
   </header>
 
   <!-- Tabs -->
-  <nav class="flex justify-center flex-wrap bg-black bg-opacity-70 py-4">
+  <nav class="flex justify-center flex-wrap bg-black bg-opacity-70 py-4 gap-2">
     <button class="tab-btn active" onclick="openTab('proyecto')"><i class="fas fa-gamepad"></i> Proyecto</button>
     <button class="tab-btn" onclick="openTab('diagrama')"><i class="fas fa-diagram-project"></i> Diagrama</button>
     <button class="tab-btn" onclick="openTab('fechas')"><i class="fas fa-calendar-alt"></i> Fechas</button>
     <button class="tab-btn" onclick="openTab('galeria')"><i class="fas fa-images"></i> Galería</button>
     <button class="tab-btn" onclick="openTab('encuesta')"><i class="fas fa-check-circle"></i> Encuesta</button>
+    <button class="tab-btn" onclick="openTab('acerca')"><i class="fas fa-users"></i> Acerca de nosotros</button>
   </nav>
 
   <!-- Contenidos -->
-  <main class="max-w-5xl mx-auto p-4">
+  <main class="max-w-5xl mx-auto p-4 space-y-10">
+    <!-- PROYECTO -->
     <section id="proyecto" class="tab-content active">
       <h2 class="text-2xl mb-4 text-cyan-400">¿Qué es GameFest?</h2>
-      <p class="mb-4">GameFest es un evento universitario independiente de la UNPAZ donde durante cinco días se celebran todas las áreas del desarrollo lúdico. Se realizan actividades abiertas al público como clases, zapadas, game jams, talleres, muestras artísticas y más, buscando integrar a la comunidad dentro del proceso de creación de juegos.</p>
-      <p class="mb-4">No es solo para estudiantes: está pensado para cualquiera que quiera sumarse a un equipo creativo, aprender haciendo, y ver en acción cómo se diseñan experiencias jugables. El evento está guiado por estudiantes avanzados que hacen de líderes de producción durante las actividades.</p>
+      <p class="mb-4">
+      GameFest es un evento universitario independiente de la UNPAZ donde durante cinco días se celebran todas las áreas del desarrollo lúdico. Se realizan actividades abiertas al público como clases, zapadas, game jams, talleres, muestras artísticas y más.
+      </p>
+      <p class="mb-4">
+      El evento está pensado para cualquier persona interesada en sumarse a un equipo creativo, aprender haciendo y experimentar en primera persona cómo se diseñan y producen experiencias jugables. Los equipos cuentan con la guía de estudiantes avanzados que actúan como líderes de producción y mentores durante toda la semana.
+      </p>
+      <p class="mb-4">
+      GameFest busca fomentar la colaboración, la creatividad y el espíritu de comunidad universitaria, ofreciendo un espacio donde estudiantes de distintas carreras pueden compartir conocimientos, mostrar sus proyectos y participar en desafíos lúdicos.
+      </p>
+      <div class="bg-green-700 bg-opacity-80 text-white p-4 rounded-lg mt-4 mb-2">
+      <strong>¡Premios por participación!</strong> <br>
+      Para incentivar la asistencia y el compromiso, quienes participen activamente durante los cinco días del evento recibirán un reconocimiento exclusivo y premios especiales. Además, habrá sorteos y souvenirs para quienes se destaquen en las distintas actividades y talleres.
+      </div>
+      <p>
+      ¡Sumate a GameFest 2025 y viví una semana llena de juegos, aprendizaje y diversión junto a la comunidad UNPAZ!
+      </p>
     </section>
 
+    <!-- DIAGRAMAS -->
     <section id="diagrama" class="tab-content">
       <h2 class="text-2xl mb-6 text-purple-400">Diagramas del Proyecto</h2>
-    
-      <!-- Diagrama FODA -->
-      <div class="grid grid-cols-2 gap-4 mb-8">
+
+      <!-- FODA -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
         <div class="bg-green-500 text-white p-4 rounded-lg shadow-lg">
           <h3 class="text-lg font-bold mb-2">Fortalezas</h3>
           <ul class="list-disc pl-5 space-y-1">
@@ -109,43 +165,126 @@
           </ul>
         </div>
       </div>
-    
-      <!-- Diagrama Espina de Pescado -->
-      <div class="relative bg-gray-900 text-white p-6 rounded-lg shadow-lg">
-        <h3 class="text-lg font-bold mb-4 text-center">Diagrama Espina de Pescado</h3>
-        <div class="flex items-center justify-center">
-          <div class="flex flex-col items-end space-y-4">
-            <div class="bg-purple-500 px-4 py-2 rounded-lg shadow-md">Materiales</div>
-            <div class="bg-purple-500 px-4 py-2 rounded-lg shadow-md">Métodos</div>
+
+      <!-- Espina de Pescado -->
+      <div class="bg-gray-900 text-white p-6 rounded-lg shadow-lg">
+        <h3 class="text-lg font-bold mb-4 text-center text-pink-400">Diagrama de Espina de Pescado</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-purple-800 p-4 rounded-md">
+            <h4 class="font-bold">Materiales</h4>
+            <p class="text-sm mt-2 text-gray-200">Falta de insumos, calidad de materiales promocionales, disponibilidad técnica.</p>
           </div>
-          <div class="w-1 h-40 bg-white mx-4"></div>
-          <div class="flex flex-col items-start space-y-4">
-            <div class="bg-purple-500 px-4 py-2 rounded-lg shadow-md">Gente</div>
-            <div class="bg-purple-500 px-4 py-2 rounded-lg shadow-md">Entorno</div>
+          <div class="bg-purple-800 p-4 rounded-md">
+            <h4 class="font-bold">Métodos</h4>
+            <p class="text-sm mt-2 text-gray-200">Falta de planificación en etapas críticas, procesos no documentados.</p>
+          </div>
+          <div class="bg-purple-800 p-4 rounded-md">
+            <h4 class="font-bold">Gente</h4>
+            <p class="text-sm mt-2 text-gray-200">Participación desigual entre miembros, falta de capacitación previa.</p>
+          </div>
+          <div class="bg-purple-800 p-4 rounded-md">
+            <h4 class="font-bold">Entorno</h4>
+            <p class="text-sm mt-2 text-gray-200">Condiciones climáticas, superposición con otros eventos, espacio reducido.</p>
           </div>
         </div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-          <div class="bg-pink-500 px-6 py-3 rounded-lg shadow-md">Problema Central</div>
+        <div class="text-center mt-6">
+          <div class="bg-pink-500 px-6 py-3 rounded-lg shadow-md inline-block">Problema Central: Organización general del evento</div>
         </div>
       </div>
     </section>
 
-    <section id="fechas" class="tab-content">
-      <h2 class="text-2xl mb-4 text-yellow-300">Fechas Clave</h2>
-      <table class="w-full table-auto text-sm text-center">
-        <thead class="bg-gray-800 text-pink-400">
-          <tr><th class="p-2">Día</th><th class="p-2">Actividad</th></tr>
-        </thead>
-        <tbody class="bg-black bg-opacity-40">
-          <tr><td class="p-2">Lunes</td><td class="p-2">Inauguración, charlas, muestra de prototipos</td></tr>
-          <tr><td class="p-2">Martes</td><td class="p-2">Clases abiertas, zapada lúdica</td></tr>
-          <tr><td class="p-2">Miércoles</td><td class="p-2">Game Jam Día 1 + producción</td></tr>
-          <tr><td class="p-2">Jueves</td><td class="p-2">Game Jam Día 2 + pruebas</td></tr>
-          <tr><td class="p-2">Viernes</td><td class="p-2">Exposición final, premios y cierre</td></tr>
-        </tbody>
-      </table>
-    </section>
+  <section id="fechas" class="tab-content">
+    <h2 class="text-2xl mb-8 text-yellow-300 text-center">Cronograma Detallado</h2>
+    <div class="relative max-w-2xl mx-auto">
+      <!-- Línea vertical central solo en pantallas md+ -->
+      <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-pink-400 via-cyan-400 to-yellow-300 opacity-70"></div>
+      <!-- Lunes -->
+      <div class="mb-10 flex flex-col md:flex-row items-center w-full">
+        <div class="md:w-1/2 md:pr-6 md:text-right w-full">
+          <div class="inline-block bg-black bg-opacity-70 p-4 rounded-lg shadow-lg animate-fadein w-full">
+            <h3 class="text-xl text-pink-400 mb-2 font-bold">Lunes</h3>
+            <ul class="list-disc pl-5 space-y-1 text-white text-left">
+              <li>Bienvenida y agradecimientos institucionales</li>
+              <li>Charlas introductorias de profesionales invitados</li>
+              <li>Presentación del tema de la GameJam</li>
+              <li>Formación y selección de grupos con guías</li>
+              <li>Recorrido por los stands de juegos de alumnos y experiencias VR</li>
+            </ul>
+          </div>
+        </div>
+        <div class="w-0 md:flex flex-col items-center hidden md:block">
+          <div class="w-6 h-6 bg-pink-400 rounded-full border-4 border-white shadow-lg animate-bounce-slow"></div>
+        </div>
+        <div class="md:w-1/2"></div>
+      </div>
+      <!-- Martes -->
+      <div class="mb-10 flex flex-col md:flex-row-reverse items-center w-full">
+        <div class="md:w-1/2 md:pl-6 md:text-left w-full">
+          <div class="inline-block bg-black bg-opacity-70 p-4 rounded-lg shadow-lg animate-fadein w-full">
+            <h3 class="text-xl text-cyan-400 mb-2 font-bold">Martes</h3>
+            <p class="text-white">
+              Producción de juegos en equipos, talleres de diseño, programación y animación, entrevistas a artistas
+            </p>
+          </div>
+        </div>
+        <div class="w-0 md:flex flex-col items-center hidden md:block">
+          <div class="w-6 h-6 bg-cyan-400 rounded-full border-4 border-white shadow-lg animate-bounce-slow"></div>
+        </div>
+        <div class="md:w-1/2"></div>
+      </div>
+      <!-- Miércoles -->
+      <div class="mb-10 flex flex-col md:flex-row items-center w-full">
+        <div class="md:w-1/2 md:pr-6 md:text-right w-full">
+          <div class="inline-block bg-black bg-opacity-70 p-4 rounded-lg shadow-lg animate-fadein w-full">
+            <h3 class="text-xl text-purple-400 mb-2 font-bold">Miércoles</h3>
+            <p class="text-white">
+              Producción y desarrollo, mentorías con guías, participación en charlas y actividades abiertas
+            </p>
+          </div>
+        </div>
+        <div class="w-0 md:flex flex-col items-center hidden md:block">
+          <div class="w-6 h-6 bg-purple-400 rounded-full border-4 border-white shadow-lg animate-bounce-slow"></div>
+        </div>
+        <div class="md:w-1/2"></div>
+      </div>
+      <!-- Jueves -->
+      <div class="mb-10 flex flex-col md:flex-row-reverse items-center w-full">
+        <div class="md:w-1/2 md:pl-6 md:text-left w-full">
+          <div class="inline-block bg-black bg-opacity-70 p-4 rounded-lg shadow-lg animate-fadein w-full">
+            <h3 class="text-xl text-blue-300 mb-2 font-bold">Jueves</h3>
+            <p class="text-white">
+              Día de testeo: pruebas de juegos, feedback entre equipos, mejoras y ajustes
+            </p>
+          </div>
+        </div>
+        <div class="w-0 md:flex flex-col items-center hidden md:block">
+          <div class="w-6 h-6 bg-blue-300 rounded-full border-4 border-white shadow-lg animate-bounce-slow"></div>
+        </div>
+        <div class="md:w-1/2"></div>
+      </div>
+      <!-- Viernes -->
+      <div class="mb-4 flex flex-col md:flex-row items-center w-full">
+        <div class="md:w-1/2 md:pr-6 md:text-right w-full">
+          <div class="inline-block bg-black bg-opacity-70 p-4 rounded-lg shadow-lg animate-fadein w-full">
+            <h3 class="text-xl text-yellow-300 mb-2 font-bold">Viernes</h3>
+            <p class="text-white">
+              Presentación final de proyectos, exposición abierta, premiación por participación y asistencia, entrega de souvenirs y cierre
+            </p>
+          </div>
+        </div>
+        <div class="w-0 md:flex flex-col items-center hidden md:block">
+          <div class="w-6 h-6 bg-yellow-300 rounded-full border-4 border-white shadow-lg animate-bounce-slow"></div>
+        </div>
+        <div class="md:w-1/2"></div>
+      </div>
+    </div>
+    <div class="mt-8 bg-green-700 text-white p-3 rounded-lg text-center shadow-lg animate-fadein">
+      <strong>Premio especial:</strong> ¡Quienes participen los 5 días recibirán un reconocimiento exclusivo!
+    </div>
+  </section>
+<!-- ...existing code... -->
 
+    <!-- GALERIA -->
     <section id="galeria" class="tab-content">
       <h2 class="text-2xl mb-4 text-pink-400">Galería de Fotos</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -156,6 +295,7 @@
       </div>
     </section>
 
+    <!-- ENCUESTA -->
     <section id="encuesta" class="tab-content">
       <h2 class="text-2xl mb-4 text-green-300">Encuesta de Satisfacción</h2>
       <p class="mb-4">Ayudanos a mejorar completando esta encuesta breve sobre tu experiencia en GameFest 2025.</p>
@@ -163,7 +303,20 @@
         <i class="fas fa-pen"></i> Ir a la encuesta
       </a>
     </section>
+    <!-- ACERCA DE NOSOTROS -->
+    <section id="acerca" class="tab-content">
+      <h2 class="text-2xl mb-4 text-blue-400">Acerca de nosotros</h2>
+      <ul class="list-disc pl-5 space-y-2">
+        <li><strong>Leon Javier Mauricio Mazzoni Fernández</strong> – Coordinador general y producción</li>
+        <li><strong>Luciana Andrea Perez</strong> – Diseño gráfico y comunicación</li>
+        <li><strong>Alejandro Banegas</strong> – Programación y soporte técnico</li>
+        <li><strong>Equipo de estudiantes avanzados</strong> – Líderes de grupos y guías</li>
+      </ul>
+      <p class="mt-4">Somos un equipo interdisciplinario de la UNPAZ comprometido con la difusión y el crecimiento de la carrera de videojuegos, creando espacios de aprendizaje, colaboración y diversión.</p>
+    </section>
+    <!-- ...existing code... -->
   </main>
+
 
   <footer class="text-center py-6 bg-black bg-opacity-80 text-white text-sm">
     <p>© 2025 - Producción Alejandro Banegas</p>
@@ -173,13 +326,41 @@
     function openTab(tabId) {
       const tabs = document.querySelectorAll('.tab-btn');
       const contents = document.querySelectorAll('.tab-content');
-  
+
       tabs.forEach(btn => btn.classList.remove('active'));
-      contents.forEach(tab => tab.classList.remove('active'));
-  
+      contents.forEach(content => content.classList.remove('active'));
+
       document.getElementById(tabId).classList.add('active');
       document.querySelector(`[onclick="openTab('${tabId}')"]`).classList.add('active');
     }
+    // Partículas simples animadas
+      document.addEventListener('DOMContentLoaded', () => {
+        const particles = document.getElementById('particles');
+        for (let i = 0; i < 24; i++) {
+          const dot = document.createElement('div');
+          dot.style.position = 'absolute';
+          dot.style.width = dot.style.height = `${Math.random() * 8 + 4}px`;
+          dot.style.borderRadius = '50%';
+          dot.style.background = `linear-gradient(135deg, #0ff, #f0f)`;
+          dot.style.opacity = Math.random() * 0.5 + 0.3;
+          dot.style.left = `${Math.random() * 100}%`;
+          dot.style.top = `${Math.random() * 100}%`;
+          dot.style.filter = 'blur(1px)';
+          dot.style.animation = `moveDot${i} ${2 + Math.random() * 3}s ease-in-out infinite alternate`;
+          particles.appendChild(dot);
+
+          // Generar keyframes únicos para cada partícula
+          const styleSheet = document.styleSheets[document.styleSheets.length - 1];
+          const x = Math.random() * 40 - 20;
+          const y = Math.random() * 40 - 20;
+          styleSheet.insertRule(`
+            @keyframes moveDot${i} {
+              0% { transform: translate(0,0);}
+              100% { transform: translate(${x}px,${y}px);}
+            }
+          `, styleSheet.cssRules.length);
+        }
+      });
   </script>
 </body>
 </html>
