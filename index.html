@@ -21,21 +21,24 @@
     }
     
     .tab-btn {
-      background-color: #1f2937; /* bg-gray-800 */
-      color: #fff; /* text-white */
-      border: 1px solid #ec4899; /* border-pink-500 */
+      background-color: #1e293b; /* azul oscuro (bg-slate-800) */
+      color: #fff;
+      border: 1px solid #0ea5e9; /* azul claro para el borde */
       padding: 0.5rem 1rem; /* px-4 py-2 */
       border-radius: 0.5rem; /* rounded-lg */
       transition: all 0.3s;
     }
     .tab-btn:hover {
-      background-color: #ec4899; /* bg-pink-500 */
+      background-color: #0ea5e9; /* azul claro (bg-sky-500) */
+      color: #fff;
       transform: scale(1.05); /* scale-105 */
-      box-shadow: 0 4px 14px 0 rgba(240, 46, 170, 0.39); /* shadow-lg */
+      box-shadow: 0 4px 14px 0 rgba(14, 165, 233, 0.39); /* shadow-lg */
     }
     .tab-btn.active {
-      background-color: #db2777; /* bg-pink-600 */
+      background-color: #0369a1; /* azul más oscuro (bg-sky-800) */
+      color: #fff;
       box-shadow: inset 0 2px 8px #00000033; /* shadow-inner */
+      border-color: #0369a1;
     }
 
     .tab-content {
@@ -87,12 +90,27 @@
       .animate-fadein {
         animation: fadein 1.5s ease;
       }
+
+      /* Efecto de zoom y brillo para la galería */
+      .galeria-img {
+        transition: transform 0.4s cubic-bezier(.25,.8,.25,1), box-shadow 0.4s;
+        cursor: pointer;
+      }
+      .galeria-img:hover {
+        transform: scale(1.08) rotate(-2deg);
+        box-shadow: 0 0 32px #f0f, 0 0 48px #0ff, 0 0 8px #fff;
+        z-index: 2;
+      }
   </style>
 </head>
 <body class="min-h-screen">
 
   <!-- Banner con animaciones -->
   <header class="text-center py-8 bg-black bg-opacity-70 relative overflow-hidden">
+    <!-- Cartelito comida gratis -->
+    <div class="absolute top-4 right-4 z-20 bg-yellow-400 text-black font-bold px-4 py-2 rounded-lg shadow-lg border-2 border-pink-500 animate-bounce-slow" style="font-family: 'Press Start 2P', cursive; letter-spacing: 1px;">
+      ¡Comida gratis!
+    </div>
     <!-- Efecto de partículas animadas -->
     <div id="particles" class="absolute inset-0 pointer-events-none z-0"></div>
     <img src="img5.png" alt="Banner GameFest" class="mx-auto max-h-60 rounded-lg shadow-lg relative z-10 animate-bounce-slow">
@@ -233,9 +251,11 @@
         <div class="md:w-1/2 md:pl-6 md:text-left w-full">
           <div class="inline-block bg-black bg-opacity-70 p-4 rounded-lg shadow-lg animate-fadein w-full">
             <h3 class="text-xl text-cyan-400 mb-2 font-bold">Martes</h3>
-            <p class="text-white">
-              Producción de juegos en equipos, talleres de diseño, programación y animación, entrevistas a artistas
-            </p>
+            <ul class="list-disc pl-5 space-y-1 text-white text-left">
+              <li>Producción de juegos en equipos</li>
+              <li>Talleres de diseño, programación y animación</li>
+              <li>Entrevistas a artistas</li>
+            </ul>
           </div>
         </div>
         <div class="w-0 md:flex flex-col items-center hidden md:block">
@@ -248,9 +268,11 @@
         <div class="md:w-1/2 md:pr-6 md:text-right w-full">
           <div class="inline-block bg-black bg-opacity-70 p-4 rounded-lg shadow-lg animate-fadein w-full">
             <h3 class="text-xl text-purple-400 mb-2 font-bold">Miércoles</h3>
-            <p class="text-white">
-              Producción y desarrollo, mentorías con guías, participación en charlas y actividades abiertas
-            </p>
+            <ul class="list-disc pl-5 space-y-1 text-white text-left">
+              <li>Producción y desarrollo de juegos</li>
+              <li>Mentorías con guías</li>
+              <li>Participación en charlas y actividades abiertas</li>
+            </ul>
           </div>
         </div>
         <div class="w-0 md:flex flex-col items-center hidden md:block">
@@ -263,9 +285,11 @@
         <div class="md:w-1/2 md:pl-6 md:text-left w-full">
           <div class="inline-block bg-black bg-opacity-70 p-4 rounded-lg shadow-lg animate-fadein w-full">
             <h3 class="text-xl text-blue-300 mb-2 font-bold">Jueves</h3>
-            <p class="text-white">
-              Día de testeo: pruebas de juegos, feedback entre equipos, mejoras y ajustes
-            </p>
+            <ul class="list-disc pl-5 space-y-1 text-white text-left">
+              <li>Día de testeo de juegos</li>
+              <li>Feedback entre equipos</li>
+              <li>Mejoras y ajustes</li>
+            </ul>
           </div>
         </div>
         <div class="w-0 md:flex flex-col items-center hidden md:block">
@@ -278,9 +302,12 @@
         <div class="md:w-1/2 md:pr-6 md:text-right w-full">
           <div class="inline-block bg-black bg-opacity-70 p-4 rounded-lg shadow-lg animate-fadein w-full">
             <h3 class="text-xl text-yellow-300 mb-2 font-bold">Viernes</h3>
-            <p class="text-white">
-              Presentación final de proyectos, exposición abierta, premiación por participación y asistencia, entrega de souvenirs y cierre
-            </p>
+            <ul class="list-disc pl-5 space-y-1 text-white text-left">
+              <li>Presentación final de proyectos</li>
+              <li>Exposición abierta</li>
+              <li>Premiación por participación y asistencia</li>
+              <li>Entrega de souvenirs y cierre</li>
+            </ul>
           </div>
         </div>
         <div class="w-0 md:flex flex-col items-center hidden md:block">
@@ -293,16 +320,15 @@
       <strong>Premio especial:</strong> ¡Quienes participen los 5 días recibirán un reconocimiento exclusivo!
     </div>
   </section>
-<!-- ...existing code... -->
 
     <!-- GALERIA -->
     <section id="galeria" class="tab-content">
       <h2 class="text-2xl mb-4 text-pink-400">Galería de Fotos</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <img src="img1.png" class="rounded-lg pixel-shadow" alt="Foto 1">
-        <img src="img2.png" class="rounded-lg pixel-shadow" alt="Foto 2">
-        <img src="img3.png" class="rounded-lg pixel-shadow" alt="Foto 3">
-        <img src="img4.png" class="rounded-lg pixel-shadow" alt="Foto 4">
+        <img src="img1.png" class="rounded-lg pixel-shadow galeria-img" alt="Foto 1">
+        <img src="img2.png" class="rounded-lg pixel-shadow galeria-img" alt="Foto 2">
+        <img src="img3.png" class="rounded-lg pixel-shadow galeria-img" alt="Foto 3">
+        <img src="img4.png" class="rounded-lg pixel-shadow galeria-img" alt="Foto 4">
       </div>
     </section>
 
@@ -310,7 +336,7 @@
     <section id="encuesta" class="tab-content">
       <h2 class="text-2xl mb-4 text-green-300">Encuesta de Satisfacción</h2>
       <p class="mb-4">Ayudanos a mejorar completando esta encuesta breve sobre tu experiencia en GameFest 2025.</p>
-      <a class="inline-block bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-lg shadow-md transition" href="https://forms.gle/XtWDRTHzZzT7WoaJ6" target="_blank">
+      <a class="inline-block bg-sky-700 hover:bg-sky-800 text-white px-6 py-3 rounded-lg shadow-md transition" href="https://forms.gle/XtWDRTHzZzT7WoaJ6" target="_blank">
         <i class="fas fa-pen"></i> Ir a la encuesta
       </a>
     </section>
