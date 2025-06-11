@@ -120,41 +120,39 @@
 
   <!-- Tabs -->
   <nav class="flex justify-center flex-wrap bg-black bg-opacity-70 py-4 gap-2">
-    <button class="tab-btn active" onclick="openTab('proyecto')"><i class="fas fa-gamepad"></i> Proyecto</button>
-    <button class="tab-btn" onclick="openTab('diagrama')"><i class="fas fa-diagram-project"></i> Diagrama</button>
-    <button class="tab-btn" onclick="openTab('fechas')"><i class="fas fa-calendar-alt"></i> Cronograma</button>
-    <button class="tab-btn" onclick="openTab('galeria')"><i class="fas fa-images"></i> Galería</button>
-    <button class="tab-btn" onclick="openTab('encuesta')"><i class="fas fa-check-circle"></i> Encuesta</button>
-    <button class="tab-btn" onclick="openTab('acerca')"><i class="fas fa-users"></i> Acerca de nosotros</button>
-  </nav>
+  <button class="tab-btn active" onclick="openTab('proyecto')"><i class="fas fa-gamepad"></i> Proyecto</button>
+  <button class="tab-btn" onclick="openTab('justificacion')"><i class="fas fa-lightbulb"></i> Justificación</button>
+  <button class="tab-btn" onclick="openTab('objetivos')"><i class="fas fa-bullseye"></i> Objetivos</button>
+  <button class="tab-btn" onclick="openTab('diagrama')"><i class="fas fa-diagram-project"></i> Diagrama</button>
+  <button class="tab-btn" onclick="openTab('fechas')"><i class="fas fa-calendar-alt"></i> Cronograma</button>
+  <button class="tab-btn" onclick="openTab('galeria')"><i class="fas fa-images"></i> Galería</button>
+  <button class="tab-btn" onclick="openTab('encuesta')"><i class="fas fa-check-circle"></i> Encuesta</button>
+  <button class="tab-btn" onclick="openTab('acerca')"><i class="fas fa-users"></i> Acerca de nosotros</button>    
+</nav>
 
   <!-- Contenidos -->
   <main class="max-w-5xl mx-auto p-4 space-y-10">
     <!-- PROYECTO -->
     <section id="proyecto" class="tab-content active">
-      <br>
-      <center><h2 class="text-2xl mb-4 text-cyan-400">¿Qué es GameFest?</h2></center>
-      <br>
-      <p class="mb-4">
-      GameFest es un evento universitario independiente de la UNPAZ donde durante cinco días se celebran todas las áreas del desarrollo lúdico. Se realizan actividades abiertas al público como clases, zapadas, game jams, talleres, muestras artísticas y más.
-      </p>
-     <br>
-      <p class="mb-4">
-      El evento está pensado para cualquier persona interesada en sumarse a un equipo creativo, aprender haciendo y experimentar en primera persona cómo se diseñan y producen experiencias jugables. Los equipos cuentan con la guía de estudiantes avanzados que actúan como líderes de producción y mentores durante toda la semana.
-      </p>
-      <br>
-      <p class="mb-4">
-      GameFest busca fomentar la colaboración, la creatividad y el espíritu de comunidad universitaria, ofreciendo un espacio donde estudiantes de distintas carreras pueden compartir conocimientos, mostrar sus proyectos y participar en desafíos lúdicos.
-      </p>
-      <br>
-      <div class="bg-green-700 bg-opacity-80 text-white p-4 rounded-lg mt-4 mb-2">
-      <center><strong>¡Premios por participación!</strong></center> <br>
-      Para incentivar la asistencia y el compromiso, quienes participen activamente durante los cinco días del evento recibirán un reconocimiento exclusivo y premios especiales. Además, habrá sorteos y souvenirs para quienes se destaquen en las distintas actividades y talleres.
+      <h2 class="text-3xl mb-6 text-cyan-400 text-center font-bold animate-glow">¿Qué es GameFest?</h2>
+      <div class="bg-gradient-to-br from-cyan-50 via-white to-blue-100 border-4 border-cyan-300 rounded-xl shadow-2xl max-w-4xl mx-auto p-8 md:p-14">
+        <p class="mb-4">
+          GameFest es un evento universitario independiente de la UNPAZ donde durante cinco días se celebran todas las áreas del desarrollo lúdico. Se realizan actividades abiertas al público como clases, zapadas, game jams, talleres, muestras artísticas y más.
+        </p>
+        <p class="mb-4">
+          El evento está pensado para cualquier persona interesada en sumarse a un equipo creativo, aprender haciendo y experimentar en primera persona cómo se diseñan y producen experiencias jugables. Los equipos cuentan con la guía de estudiantes avanzados que actúan como líderes de producción y mentores durante toda la semana.
+        </p>
+        <p class="mb-4">
+          GameFest busca fomentar la colaboración, la creatividad y el espíritu de comunidad universitaria, ofreciendo un espacio donde estudiantes de distintas carreras pueden compartir conocimientos, mostrar sus proyectos y participar en desafíos lúdicos.
+        </p>
+        <div class="bg-green-700 bg-opacity-80 text-white p-4 rounded-lg mt-4 mb-2 text-center font-bold shadow">
+          ¡Premios por participación!<br>
+          <span class="font-normal">Quienes participen activamente durante los cinco días recibirán un reconocimiento exclusivo y premios especiales. Además, habrá sorteos y souvenirs para quienes se destaquen en las distintas actividades y talleres.</span>
+        </div>
+        <p class="mt-4 text-center text-gray-700 text-base">
+          ¡Sumate a GameFest 2025 y viví una semana llena de juegos, aprendizaje y diversión junto a la comunidad UNPAZ!
+        </p>
       </div>
-      <br>
-      <p>
-      ¡Sumate a GameFest 2025 y viví una semana llena de juegos, aprendizaje y diversión junto a la comunidad UNPAZ!
-      </p>
     </section>
 
     <!-- DIAGRAMAS -->
@@ -351,7 +349,65 @@
       </ul>
       <p class="mt-4">Somos un equipo interdisciplinario de la UNPAZ comprometido con la difusión y el crecimiento de la carrera de videojuegos, creando espacios de aprendizaje, colaboración y diversión.</p>
     </section>
-    <!-- ...existing code... -->
+
+    <!-- JUSTIFICACIÓN -->
+    <section id="justificacion" class="tab-content">
+      <h2 class="text-3xl mb-6 text-orange-400 text-center font-bold animate-glow">¿Por qué creamos GameFest?</h2>
+      <div class="bg-gradient-to-br from-orange-50 via-white to-yellow-100 border-4 border-orange-300 rounded-xl shadow-2xl max-w-4xl mx-auto p-8 md:p-14">
+        <p class="mb-4">
+          GameFest surge como una iniciativa para fortalecer la integración entre las distintas carreras y disciplinas de la UNPAZ, entendiendo que la producción de videojuegos y experiencias lúdicas requiere de la colaboración de perfiles diversos: programadores, diseñadores, artistas, comunicadores y más.
+        </p>
+        <p class="mb-4">
+          El evento busca crear un espacio donde los estudiantes puedan experimentar el trabajo en equipo, aprender de manera práctica y desafiarse a sí mismos en un entorno creativo y motivador. A través de talleres, mentorías y actividades abiertas, se fomenta el intercambio de saberes y la construcción de redes entre pares, promoviendo la interdisciplinariedad y el sentido de comunidad universitaria.
+        </p>
+        <p class="mb-4">
+          Además, GameFest tiene como objetivo visibilizar el talento estudiantil, brindando la oportunidad de mostrar proyectos, compartir ideas y recibir reconocimiento tanto dentro como fuera de la universidad. La experiencia intensiva de una semana permite a los participantes vivir el proceso completo de creación de un juego, desde la concepción de la idea hasta la presentación final, enfrentando desafíos reales y celebrando los logros colectivos.
+        </p>
+        <p class="mt-4 text-center text-gray-700 text-base">
+          En definitiva, GameFest es mucho más que un evento: es una plataforma para descubrir vocaciones, potenciar habilidades y fortalecer la identidad de la comunidad UNPAZ a través del juego, la creatividad y la colaboración.
+        </p>
+      </div>
+    </section>
+
+    <!-- OBJETIVOS -->
+    <section id="objetivos" class="tab-content">
+      <h2 class="text-3xl mb-6 text-sky-400 text-center font-bold animate-glow">🎯 Objetivos de GameFest</h2>
+      <div class="bg-gradient-to-br from-sky-50 via-white to-blue-100 border-4 border-sky-300 rounded-xl shadow-2xl max-w-4xl mx-auto p-8 md:p-14">
+        <ul class="space-y-5 text-lg">
+          <li class="flex items-start gap-3">
+            <span class="text-sky-400 text-2xl"><i class="fas fa-users"></i></span>
+            <span><strong>Fomentar el trabajo en equipo</strong> y el aprendizaje práctico entre estudiantes de distintas carreras.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-green-400 text-2xl"><i class="fas fa-bullhorn"></i></span>
+            <span><strong>Difundir la carrera de videojuegos</strong> de UNPAZ y sus oportunidades.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-400 text-2xl"><i class="fas fa-gamepad"></i></span>
+            <span><strong>Promover el diseño y desarrollo de juegos</strong> realizados por estudiantes.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-yellow-400 text-2xl"><i class="fas fa-people-group"></i></span>
+            <span><strong>Generar una experiencia colectiva de creación lúdica</strong> que potencie la creatividad y la colaboración.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-pink-400 text-2xl"><i class="fas fa-lightbulb"></i></span>
+            <span><strong>Visibilizar talentos estudiantiles</strong> y brindar un espacio para mostrar proyectos y recibir reconocimiento.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-blue-400 text-2xl"><i class="fas fa-handshake"></i></span>
+            <span><strong>Fortalecer la comunidad universitaria</strong> a través de actividades abiertas, mentorías y redes de colaboración.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-orange-400 text-2xl"><i class="fas fa-award"></i></span>
+            <span><strong>Reconocer la participación</strong> y el compromiso de quienes se suman a la propuesta.</span>
+          </li>
+        </ul>
+        <p class="mt-8 text-center text-gray-700 text-base">
+          GameFest es mucho más que un evento: es una oportunidad para aprender, crear, compartir y crecer junto a la comunidad universitaria, impulsando el desarrollo de la industria de los videojuegos desde la UNPAZ.
+        </p>
+      </div>
+    </section>
   </main>
 
 
